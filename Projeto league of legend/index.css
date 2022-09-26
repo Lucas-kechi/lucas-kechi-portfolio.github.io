@@ -1,0 +1,273 @@
+* {
+    margin: 0;
+    font-family: sans-serif;
+    font-weight: 800;
+}
+
+body {
+    display: grid;
+    grid-template-areas: "main img";
+    grid-template-columns: 50vw 50vw;
+}
+
+.main {
+    height: 100vh;
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: none;
+}
+
+#mainImg {
+    grid-area: img;
+    border: none;
+    background-image: url(https://lol.fandex.com/public/standard_theme/img/block_ball_homepage_bg.jpg);
+    background-repeat: no-repeat;
+    background-size: 50vw 100vh;
+}
+
+#mainImg img {
+    width: 50vw;
+    height: 100vh;
+}
+
+#formSection {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+form {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 4vh;
+}
+
+form div {
+    display: flex;
+    justify-content: space-between;
+}
+
+form div button {
+    height: 5vh;
+    width: 32%;
+    border-radius: 4px;
+    border: none;
+}
+
+#facebookButton {
+    background-color: rgba(24, 119, 242, 0.9);
+}
+
+#facebookButton:hover {
+    background-color: rgba(24, 119, 242, 1);
+}
+
+#facebookButton img{
+    border-radius: 50%;
+}
+
+#googleButton {
+    background-color: white;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+#googleButton:hover {
+    background-color: rgb(245, 245, 245);
+}
+
+#appleButton {
+    background-color: rgba( 0, 0, 0, 0.88);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input {
+    color: rgb(102, 102, 102);
+    height: 8vh;
+    border-radius: 4px;
+    background-color: rgba(126, 126, 126, 0.1);
+    border: none;
+    outline: none;
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+
+input::placeholder{
+    text-transform: uppercase;
+}
+
+input:focus {
+    border: 2px solid black;
+    box-sizing: border-box;
+    background-color: white;   
+}
+
+input:hover:not(:focus){
+    background-color: rgba(126, 126, 126, 0.2);
+}
+
+h5{
+    color: rgb(17, 17, 17);
+    font-size: 2.5vw;
+    padding-bottom: 3vh;
+    font-weight: 1200;
+}
+
+form label {
+    display: flex;
+    align-items: center;
+    gap: 1vh;
+}
+
+#checkbox {
+    height: fit-content;
+    cursor: pointer;
+}
+
+#footer {
+    height: 20vh;
+    display: flex;
+    flex-direction: column ;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.login-button {
+    height: 7vh;
+    width: 7vh;
+    border-radius: 30%;
+    border: 2px solid rgba(0, 0, 0, 0.1)
+}
+
+
+#footer div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#footer div a {
+    font-size: 0.8vw;
+    color: rgb(102, 102, 102);
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+#footer div a:hover {
+    color: rgb(50, 50, 50);
+}
+
+#footer button:disabled {
+    cursor: default;
+}
+
+#logoSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#logoSection img{
+    cursor: pointer;
+}
+
+button {
+    cursor: pointer;
+}
+
+.modal-section {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(60, 60, 60, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-section nav {
+    height: 60%;
+    width: 40%;
+    background-color: white;
+    box-shadow: 0 0 1em rgba( 0, 0, 0, 1);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.close-button {
+    color:  rgb(102, 102, 102);
+    margin-right: .4rem;
+    padding: 0;
+    width: fit-content;
+    outline: none;
+    border: none;
+    background-color: white;
+}
+
+.close-button:hover {
+    color: black;
+}
+
+#modal-content {
+    width: 100%;
+    display: flex;
+    border-radius: 10px;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+    gap: 6rem;
+    margin-top: 4rem;
+}
+
+#modal-content form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+} 
+
+#modal-content form input {
+    width: 35vw;
+    font-size: 1vw;
+}
+
+.send-button {
+    color:  rgb(102, 102, 102);
+    height: 5vh;
+    width: 32%;
+    border-radius: 4px;
+    font-size: 1.2vw;
+}
+
+.send-button:disabled {
+    cursor: default;
+}
+
+#modal-text {
+    color: rgb(17, 17, 17);
+    font-size: 2vw;
+    font-weight: 1200;
+    padding-bottom: 0;
+    text-align: center;
+}
+
+#send-button {
+    width: 15%;
+    border: 2px solid rgba(0, 0, 0, 0.1)
+}
+
+.active-button {
+    background-color: #00a0b9;
+    color: white;
+}
