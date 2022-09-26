@@ -285,7 +285,7 @@ footer {
     }
 
     nav ul li:last-child a {
-        font-size: 1vw;
+        font-size: 0.8vw;
     }
 
     #links nav ul li svg {
