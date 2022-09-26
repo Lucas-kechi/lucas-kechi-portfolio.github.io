@@ -267,6 +267,15 @@ footer {
         font-size: 1.8vw;
     }
 
+    #profile {
+        text-align: center;
+    }
+
+    #profile img {
+        width: 55%;
+        height: 75%;
+    }
+
     #links nav ul {
         padding: 0;
     }
