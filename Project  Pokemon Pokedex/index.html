@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <button class="button" id="btnAudio">
+        <svg id="soundOn" xmlns="http://www.w3.org/2000/svg" width="15vh" height="15vh" fill="currentColor" class="bi bi-volume-up" viewBox="0 0 16 16">
+            <path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
+            <path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z"/>
+            <path d="M10.025 8a4.486 4.486 0 0 1-1.318 3.182L8 10.475A3.489 3.489 0 0 0 9.025 8c0-.966-.392-1.841-1.025-2.475l.707-.707A4.486 4.486 0 0 1 10.025 8zM7 4a.5.5 0 0 0-.812-.39L3.825 5.5H1.5A.5.5 0 0 0 1 6v4a.5.5 0 0 0 .5.5h2.325l2.363 1.89A.5.5 0 0 0 7 12V4zM4.312 6.39 6 5.04v5.92L4.312 9.61A.5.5 0 0 0 4 9.5H2v-3h2a.5.5 0 0 0 .312-.11z"/>
+        </svg>
+        <svg id="soundOff" xmlns="http://www.w3.org/2000/svg" width="15vh" height="15vh" fill="currentColor" class="bi bi-volume-mute" viewBox="0 0 16 16">
+            <path d="M6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06zM6 5.04 4.312 6.39A.5.5 0 0 1 4 6.5H2v3h2a.5.5 0 0 1 .312.11L6 10.96V5.04zm7.854.606a.5.5 0 0 1 0 .708L12.207 8l1.647 1.646a.5.5 0 0 1-.708.708L11.5 8.707l-1.646 1.647a.5.5 0 0 1-.708-.708L10.793 8 9.146 6.354a.5.5 0 1 1 .708-.708L11.5 7.293l1.646-1.647a.5.5 0 0 1 .708 0z"/>
+        </svg>
+    </button>
+    <audio controls loop class="audio" id="soundTrack">
+        <source src="./assets/soundTrack2.mp3" type="audio/mpeg">
+    </audio>
+    <div class="pokedexLeftPart">
+        <div class="pokedexLeftPart__commandTop">
+            <span class="pokedexLeftPart__spanTop" id="apiLoad"></span>
+        </div>
+        <div class="pokedexLeftPart__commandCenter">
+            <div class="pokedexLeftPart__backgroundCenter">
+                <img class="pokedexLeftPart__imgCenter" id="pokemonImg" src="" alt="Pokemon" >
+            </div>
+        </div>
+        <div class="pokedexLeftPart__commandFooter">
+            <div class="pokedexLeftPart__pokemonName" id="pokemonName">charizard</div>
+            <div class="pokedexLeftPart__navFooter">
+                <button class="pokedexLeftPart__upButtonFooter" id="btnNavUp"></button>
+                <button class="pokedexLeftPart__rightButtonFooter" id="btnNavRight"></button >
+                <button class="pokedexLeftPart__downButtonFooter" id="btnNavDown"></button>
+                <button class="pokedexLeftPart__leftButtonFooter" id="btnNavLeft"></button>
+            </div>
+        </div>
+    </div>
+    <div class="pokedexRightPart">
+        <div class="pokedexRightPart__content">
+            <div class="pokedexRightPart__innerText" id="pokemonContent">
+                <div class="pokedexRightPart__idName">
+                    <span id="pokemonId"></span>
+                    <span id="pokemonName1"></span>
+                </div>
+                <hr>
+
+                <div id="genera"></div>
+                <hr>
+
+                <div class="pokedexRightPart__type" id="type">
+                    type
+                    <div class="pokedexRightPart__type__spans" id="typeSpans"></div>
+                </div>
+                <hr>
+
+                <div class="pokedexRightPart__height">
+                    height
+                    <span id="spanHeight"></span>
+                </div>
+                <hr>
+
+                <div class="pokedexRightPart__weight">
+                    weight
+                    <span id="spanWeight"></span>
+                </div>
+                <hr>
+                
+            </div>
+        </div>
+        <div class="pokedexRightPart__filter">
+            <button class="pokedexRightPart__button1">
+                <img class="pokedexRightPart__button1__typeNormalImg" id="typeNormalImg" width="70%" height="90%" alt="Pokémon Normal Type Icon" src="./assets/Pokémon_Normal_Type_Icon.svg">
+                <img class="pokedexRightPart__button1__typeFightingImg" id="typeFightingImg" width="70%" height="90%" alt="Pokémon Fighting Type Icon" src="./assets/Pokémon_Fighting_Type_Icon.svg">
+            </button>
+            <button class="pokedexRightPart__button2">
+                <img class="pokedexRightPart__button1__typeFlyingImg" id="typeFlyingImg" width="70%" height="90%" alt="Pokémon Flying Type Icon" src="./assets/Pokémon_Flying_Type_Icon.svg">
+                <img class="pokedexRightPart__button1__typePoisonImg" id="typePoisonImg" width="70%" height="90%" alt="Pokémon Poison Type Icon" src="./assets/Pokémon_Poison_Type_Icon.svg">
+            </button>
+            <button class="pokedexRightPart__button3">
+                <img class="pokedexRightPart__button1__typeGroundImg" id="typeGroundImg" width="70%" height="90%" alt="Pokémon Ground Type Icon" src="./assets/Pokémon_Ground_Type_Icon.svg">
+                <img class="pokedexRightPart__button1__typeRockImg" id="typeRockImg" width="70%" height="90%" alt="Pokémon Rock Type Icon" src="./assets/Pokémon_Rock_Type_Icon.svg">
+            </button>
+            <button class="pokedexRightPart__button4">
+                <img class="pokedexRightPart__button1__typeBugImg" id="typeBugImg" width="70%" height="90%" alt="Pokémon Bug Type Icon" src="./assets/Pokémon_Bug_Type_Icon.svg">
+                <img class="pokedexRightPart__button1__typeGhostImg" id="typeGhostImg" width="70%" height="90%" alt="Pokémon Ghost Type Icon" src="./assets/Pokémon_Ghost_Type_Icon.svg">
+            </button>
+            <button class="pokedexRightPart__button5">
+                <img class="pokedexRightPart__button1__typeSteelImg" id="typeSteelImg" width="70%" height="90%" alt="Pokémon Steel Type Icon" src="./assets/Pokémon_Steel_Type_Icon.svg">
+                <img class="pokedexRightPart__button1__typeFireImg" id="typeFireImg" width="70%" height="90%" alt="Pokémon Fire Type Icon" src="./assets/Pokémon_Fire_Type_Icon.svg">
+            </button>
+            <button class="pokedexRightPart__button6">
+                <img class="pokedexRightPart__button1__typeWaterImg" id="typeWaterImg" width="70%" height="90%" alt="Pokémon Water Type Icon" src="./assets/Pokémon_Water_Type_Icon.svg">
+                <img class="pokedexRightPart__button1__typeGrassImg" id="typeGrassImg" width="70%" height="90%" alt="Pokémon Grass Type Icon" src="./assets/Pokémon_Grass_Type_Icon.svg">
+            </button>
+            <button class="pokedexRightPart__button7">
+                <img class="pokedexRightPart__button1__typeElectricImg" id="typeElectricImg" width="70%" height="90%" alt="Pokémon Electric Type Icon" src="./assets/Pokémon_Electric_Type_Icon.svg">
+                <img class="pokedexRightPart__button1__typePsychicImg" id="typePsychicImg" width="70%" height="90%" alt="Pokémon Psychic Type Icon" src="./assets/Pokémon_Psychic_Type_Icon.svg">
+            </button>
+            <button class="pokedexRightPart__button8">
+                <img class="pokedexRightPart__button1__typeIceImg" id="typeIceImg" width="70%" height="90%" alt="Pokémon Ice Type Icon" src="./assets/Pokémon_Ice_Type_Icon.svg">
+                <img class="pokedexRightPart__button1__typeDragonImg" id="typeDragonImg" width="70%" height="90%" alt="Pokémon Dragon Type Icon" src="./assets/Pokémon_Dragon_Type_Icon.svg">
+            </button>
+            <button class="pokedexRightPart__button9">
+                <img class="pokedexRightPart__button1__typeDarkImg" id="typeDarkImg" width="70%" height="90%" alt="Pokémon Dark Type Icon" src="./assets/Pokémon_Dark_Type_Icon.svg">
+                <img class="pokedexRightPart__button1__typeFairyImg" id="typeFairyImg" width="70%" height="90%" alt="Pokémon Fairy Type Icon" src="./assets/Pokémon_Fairy_Type_Icon.svg">
+            </button>
+            <button class="pokedexRightPart__button10">
+                <img class="pokedexRightPart__button1__typeShadowImg" id="typeShadowImg" width="70%" height="90%" alt="Pokémon Shadow Type Icon" src="./assets/type-shadow.png">
+            </button>
+        </div>
+        <div class="pokedexRightPart__controls">
+            <div class="pokedexRightPart__leftRight">
+                <button id="rightPart-leftBtn"></button>
+                <button id="rightPart-rightBtn"></button>
+            </div>
+            <div class="pokedexRightPart__textSearch">
+                Search 
+                <button id="searchBtn"></button>
+            </div>
+        </div>
+        <div class="pokedexRightPart__inputs">
+            <input type="text" class="pokedexRightPart__inputName" id="inputName" placeholder="Pokémon Name">
+            <input type="number" class="pokedexRightPart__inputId" id="inputId" placeholder="Pokémon No">
+        </div>
+    </div>
+    
+    <script src="./script.js"></script>
+</body>
+</html>
