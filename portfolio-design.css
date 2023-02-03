@@ -38,13 +38,14 @@ header section {
     flex-direction: column;
     align-items: center;
     gap: .8rem;
+    overflow: hidden;
 }
 
 #profile img {
     border-radius: 100px;
     border: 2px solid #00ff00;
-    width: 40%;
-    height: 60%;
+    width: 11.5vh;
+    height: 11.5vh;
 }
 
 #profile p{
@@ -103,11 +104,13 @@ h3 {
 #tecnologias div {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     gap: .8rem;
     padding-left: .4rem;
 }
 
 #tecnologias div span {
+    height: fit-content;
     font-size: 0.8vw;
     color: #000000;
     background-color: #cb92b1;
@@ -117,6 +120,7 @@ h3 {
     text-align: center;
     text-transform: uppercase;
     font-weight: 600;
+    display: flex;
 }
 
 #experiencias {
