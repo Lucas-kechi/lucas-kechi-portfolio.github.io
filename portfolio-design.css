@@ -82,6 +82,7 @@ nav ul a {
     gap: .5rem;
     box-sizing: border-box;
     padding: .025vw;
+    overflow-wrap: break-word;
 }
 
 nav ul a:hover {
