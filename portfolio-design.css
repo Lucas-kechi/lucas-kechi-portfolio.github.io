@@ -305,6 +305,10 @@ footer {
         height: 18%;
     }
 
+    #tecnologias div span {
+        font-size: 1.8vw;
+    }
+
     #educacao {
         height: max-content;
         padding: 7% 0% 7% 10%;
