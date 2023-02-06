@@ -82,7 +82,6 @@ nav ul a {
     gap: .5rem;
     box-sizing: border-box;
     padding: .025vw;
-    overflow-wrap: break-word;
 }
 
 nav ul a:hover {
@@ -298,7 +297,7 @@ footer {
     }
 
     nav ul li:last-child a {
-        font-size: 0.8vw;
+        word-break: break-all;
     }
 
     #links nav ul li svg {
