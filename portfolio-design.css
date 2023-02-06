@@ -260,6 +260,14 @@ main h2 {
     background-color: orange;
 }
 
+#react {
+    background-color: #61DBFB;
+}
+
+#scss {
+    background-color: rgb(175, 0, 219);
+}
+
 footer {
     grid-area: footer;
     display: flex;
